@@ -13,8 +13,8 @@ module.exports = {
         })
     },
     createProduct: function(req,res,next){
-        db.add_product([req.body.id,req.body.name,req.body.description,req.body.type], function(err, product){
-            res.status(200).send(product);
+        db.add_product([req.body.name,req.body.description,req.body.price,req.body.type], function(err, products){
+            res.status(200).json(products);
         })
     }
 
