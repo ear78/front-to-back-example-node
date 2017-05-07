@@ -1,0 +1,19 @@
+create table products (
+    id serial primary key not null,
+    name varchar(70),
+    description varchar(180),
+    price money,
+    type varchar(20)
+);
+
+create table cart (
+    id serial primary key not null,
+    products_id integer references products
+);
+
+insert into products
+    (name,description,price,type)
+values
+("product1", "description 1 for product1", 5.99, "type1"),
+("product2", "description 2 for product2", 6.99, "type2"),
+("product3", "description 3 for product3", 7.99, "type3")
